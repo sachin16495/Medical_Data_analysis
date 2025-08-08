@@ -9,7 +9,7 @@ This notebook demonstrates the process of **fine-tuning Microsoft's Phi-2** mode
 
 - `data/`: Contains raw biomedical abstract files labeled as "cancer" and "non_cancer".
 - `checkpoints/`: Stores LoRA-adapted model weights.
-- `Fine_Tunning_Part_2.ipynb`: Main notebook for preprocessing, training, inference, and evaluation.
+- `Phi_2_Finetuned_Pipeline.ipynb`: Main notebook for preprocessing, training, inference, and evaluation.
 
 ---
 
