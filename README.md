@@ -87,16 +87,15 @@ disease_extraction(f"Explain the disease name only from the abstract text {abstr
 
 ---
 
-## 📊 Output
+## Output
 
 - Model predictions: Full probability distributions per abstract.
 - Extracted disease mentions using few-shot prompting.
-- Useful for benchmarking downstream biomedical classification tasks.
+- Useful for benchmarking downstream  classification tasks.
 
 ---
 
-## 💡 Future Enhancements
-
-- Add evaluation metrics (accuracy, F1, ROC-AUC).
+## Evaluation
+- Add evaluation metrics (confusion matrix,accuracy, Prcision ,Recall,F1,).
 - Incorporate zero-shot vs fine-tuned comparison.
 - Use structured output for disease mention extraction (NER or span-based tagging).
