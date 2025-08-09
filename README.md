@@ -100,7 +100,7 @@ disease_extraction(f"Explain the disease name only from the abstract text {abstr
 - Incorporate zero-shot vs fine-tuned comparison.
 - Use structured output for disease mention extraction (NER or span-based tagging).
 
-#Deployment
+# Deployment
 VLLM (Very Large Language Model) is an inference engine optimized for fast, efficient serving of LLMs.
 Compared to vanilla Hugging Face transformers inference, it offers:
 
