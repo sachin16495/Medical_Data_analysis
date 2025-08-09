@@ -189,4 +189,10 @@ VLLM generates the output (e.g., "Cancer" or "Non-Cancer").
 
 Post-process Output → removes the original prompt from the response if the model repeats it.
 
+## API CuRL request
+```
+curl -X POST "http://localhost:8000/classify" \
+     -H "Content-Type: application/json" \
+     -d '{"text": "Histopathology reveals malignant tumor cells"}'
+```
 
