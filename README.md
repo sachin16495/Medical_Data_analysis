@@ -99,3 +99,93 @@ disease_extraction(f"Explain the disease name only from the abstract text {abstr
 - Add evaluation metrics (confusion matrix,accuracy, Prcision ,Recall,F1,).
 - Incorporate zero-shot vs fine-tuned comparison.
 - Use structured output for disease mention extraction (NER or span-based tagging).
+
+#Deployment
+VLLM (Very Large Language Model) is an inference engine optimized for fast, efficient serving of LLMs.
+Compared to vanilla Hugging Face transformers inference, it offers:
+
+-PagedAttention → reduces memory usage & avoids out-of-memory errors for long prompts.
+-Streaming support → sends partial results as they’re generated.
+
+-Easy deployment → run one command and expose a REST API.
+
+For a classification model like Cancer / Non-Cancer detection, VLLM might feel like overkill, but:
+
+-It ensures low-latency inference.
+
+-Can scale easily if you later integrate with other LLM tasks.
+
+-You can serve LoRA / fine-tuned versions of base models.
+```
+python -m vllm.entrypoints.api_server \
+  --model /home/ubuntu/dev_large_model/phi2_cls/checkpoint-300/ \
+  --dtype float16 \
+  --port=8082
+```
+python -m vllm.entrypoints.api_server
+
+Starts the VLLM REST API server.
+
+--model /home/ubuntu/dev_large_model/phi2_cls/checkpoint-300/
+
+Path to your model checkpoint (Phi-2 fine-tuned for classification).
+
+Can also be a Hugging Face model name.
+
+--dtype float16
+
+Loads model weights in half precision.
+
+Speeds up inference and reduces GPU memory usage.
+
+--port=8082
+
+REST API will be available at http://localhost:8082.
+
+## Fast API based inferencing
+from fastapi import FastAPI
+import requests
+from pydantic import BaseModel
+'''
+VLLM_ENDPOINT = "http://localhost:8082/generate"  # matches your --port
+
+app = FastAPI()
+
+class InputText(BaseModel):
+    text: str
+
+@app.post("/classify")
+def classify_text(input_data: InputText):
+    payload = {
+        "prompt": input_data.text,
+        "temperature": 0.0,   # deterministic output
+        "max_tokens": 10      # small since classification needs short answer
+    }
+    
+    # Call VLLM API
+    response = requests.post(VLLM_ENDPOINT, json=payload)
+    result = response.json()
+
+    # VLLM returns: {"text": ["<prompt><output>"]}
+    generated_text = result["text"][0]
+
+    # Remove the prompt from output if the model echoes it
+    output_label = generated_text.replace(input_data.text, "").strip()
+    
+    return {"label": output_label}
+
+'''
+## How it Works
+Run VLLM Server → loads your fine-tuned Phi-2 classification model into GPU memory.
+
+FastAPI Client Endpoint (/classify):
+
+Receives input text (e.g., "This patient has a malignant tumor").
+
+Sends it to VLLM’s /generate endpoint.
+
+VLLM generates the output (e.g., "Cancer" or "Non-Cancer").
+
+Post-process Output → removes the original prompt from the response if the model repeats it.
+
+
