@@ -144,7 +144,7 @@ REST API will be available at http://localhost:8082.
 
 ## Fast API based inferencing
 
-'''
+```
 from fastapi import FastAPI
 import requests
 from pydantic import BaseModel
@@ -175,7 +175,7 @@ def classify_text(input_data: InputText):
     
     return {"label": output_label}
 
-'''
+```
 ## How it Works
 Run VLLM Server → loads your fine-tuned Phi-2 classification model into GPU memory.
 
