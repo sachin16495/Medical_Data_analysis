@@ -143,10 +143,11 @@ Speeds up inference and reduces GPU memory usage.
 REST API will be available at http://localhost:8082.
 
 ## Fast API based inferencing
+
+'''
 from fastapi import FastAPI
 import requests
 from pydantic import BaseModel
-'''
 VLLM_ENDPOINT = "http://localhost:8082/generate"  # matches your --port
 
 app = FastAPI()
