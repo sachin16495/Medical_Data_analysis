@@ -3,15 +3,15 @@ import requests
 from pydantic import BaseModel
 
 # VLLM API endpoint
-VLLM_ENDPOINT = "http://localhost:8082/classify_abstract"  # matches your --port
+VLLM_ENDPOINT = "http://localhost:8082/generate"  # matches your --port
 
 app = FastAPI()
 
 class InputText(BaseModel):
     text: str
 
-@app.post("/classify")
-def classify_text(input_data: InputText):
+@app.post("/classify_abstract")
+def classify_abstract(input_data: InputText):
     payload = {
         "prompt": input_data.text,
         "temperature": 0.0,   # deterministic output
