@@ -102,21 +102,18 @@ disease_extraction(f"Explain the disease name only from the abstract text {abstr
 Comparision of baseline model and Fine Tune model confusion matrix
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a4d233bc-2bf9-45d6-a1a3-78383923da01" alt="Alt text" width="400"/>
-  <img src="https://github.com/user-attachments/assets/3ad1f5f5-128b-4b5c-9c5d-0edc7d1cddee" alt="Alt text" width="400"/>
+  <img src="https://github.com/user-attachments/assets/789579a2-7baf-4e6b-8db3-7b38f6a9d00b" alt="Alt text" width="400"/>
 </p>
 <p align="center">
   <em>Baseline Model Confusion Matrix/em> &nbsp;&nbsp;&nbsp; <em>Fine Tune Model Confusion Matrix</em>
 </p>
 
-  <img src="https://github.com/user-attachments/assets/789579a2-7baf-4e6b-8db3-7b38f6a9d00b" alt="Alt text" width="400"/>
-  <br>
-  <em>Caption describing the image2</em>
-</p>
-
-<p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3ad1f5f5-128b-4b5c-9c5d-0edc7d1cddee" alt="Alt text" width="400"/>
 <img width="309" height="119" alt="image" src="https://github.com/user-attachments/assets/8eb9e25b-d4fe-4388-aa25-96a27b55d05f" />
-<br>
-  <em>Caption describing the image2</em>
+</p>
+<p align="center">
+  <em>Baseline Model Classification Report/em> &nbsp;&nbsp;&nbsp; <em>Fine Tune Model Classification Report</em>
 </p>
 
 
