@@ -100,8 +100,20 @@ disease_extraction(f"Explain the disease name only from the abstract text {abstr
 - Incorporate zero-shot vs fine-tuned comparison.
 - Use structured output for disease mention extraction (NER or span-based tagging).
 Comparision of baseline model and Fine Tune model confusion matrix
-![Baseline Model Confusion Matrix](https://github.com/user-attachments/assets/a4d233bc-2bf9-45d6-a1a3-78383923da01)
-![Fine Tune Model Confusion Matrix](https://github.com/user-attachments/assets/789579a2-7baf-4e6b-8db3-7b38f6a9d00b)
+<p align="left">
+  <img src="https://github.com/user-attachments/assets/a4d233bc-2bf9-45d6-a1a3-78383923da01" alt="Alt text" width="400"/>
+  <br>
+  <em>Caption describing the image</em>
+</p>
+
+<p align="left">
+  <img src="https://github.com/user-attachments/assets/789579a2-7baf-4e6b-8db3-7b38f6a9d00b" alt="Alt text" width="400"/>
+  <br>
+  <em>Caption describing the image2</em>
+</p>
+
+
+
 <img width="309" height="119" alt="image" src="https://github.com/user-attachments/assets/8eb9e25b-d4fe-4388-aa25-96a27b55d05f" />
 
 
