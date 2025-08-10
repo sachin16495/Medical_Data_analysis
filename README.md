@@ -1,7 +1,8 @@
-
+<img width="309" height="119" alt="image" src="https://github.com/user-attachments/assets/8eb9e25b-d4fe-4388-aa25-96a27b55d05f" />
 # Fine-Tuning Phi-2 for Disease Classification using LORA
 
 This notebook demonstrates the process of **fine-tuning Microsoft's Phi-2** model for **binary classification** of disease-related abstracts using **LoRA (Low-Rank Adaptation)**. It involves both baseline evaluation and fine-tuned comparison, and it uses structured biomedical abstract data to predict whether the text indicates "Cancer" or "Non Cancer".
+
 
 ---
 
@@ -99,6 +100,11 @@ disease_extraction(f"Explain the disease name only from the abstract text {abstr
 - Add evaluation metrics (confusion matrix,accuracy, Prcision ,Recall,F1,).
 - Incorporate zero-shot vs fine-tuned comparison.
 - Use structured output for disease mention extraction (NER or span-based tagging).
+Comparision of baseline model and Fine Tune model confusion matrix
+![Baseline Model Confusion Matrix](https://github.com/user-attachments/assets/a4d233bc-2bf9-45d6-a1a3-78383923da01)
+![Fine Tune Model Confusion Matrix](https://github.com/user-attachments/assets/789579a2-7baf-4e6b-8db3-7b38f6a9d00b)
+
+
 
 # Deployment
 VLLM (Very Large Language Model) is an inference engine optimized for fast, efficient serving of LLMs.
