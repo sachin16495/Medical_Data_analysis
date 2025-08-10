@@ -106,7 +106,7 @@ Comparision of baseline model and Fine Tune model confusion matrix
   <em>Caption describing the image</em>
 </p>
 
-<p align="left">
+<p align="right">
   <img src="https://github.com/user-attachments/assets/789579a2-7baf-4e6b-8db3-7b38f6a9d00b" alt="Alt text" width="400"/>
   <br>
   <em>Caption describing the image2</em>
